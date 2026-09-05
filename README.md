@@ -97,7 +97,7 @@ php -S localhost:8080
 
 ## ورود اولیه
 - Admin — username: `admin` / password: `admin123`
-- User (کاربر عادی نمونه) — username: `sara` / password: `sara123`
+- User (کاربر عادی نمونه) — username: `ali` / password: `123`
 
 پس از ورود، از بخش مدیریت کاربران رمز و حساب‌های موردنیاز را تغییر دهید.
 
