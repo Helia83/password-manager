@@ -1,0 +1,495 @@
+@font-face {
+    font-family: "Vazirmatn";
+    src: url("../fonts/Vazirmatn-Regular.woff2") format("woff2");
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Vazirmatn", Tahoma, sans-serif;
+    color: #1e293b;
+    
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(96, 165, 250, 0.40),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(167, 139, 250, 0.32),
+            transparent 38%
+        ),
+
+        radial-gradient(
+            circle at 75% 90%,
+            rgba(244, 114, 182, 0.28),
+            transparent 38%
+        ),
+
+        linear-gradient(
+            135deg,
+            #f5f9ff,
+            #f7f3ff,
+            #fff4fa
+        );
+}
+
+
+/* منوی بالا */
+
+.top-menu {
+    width: calc(100% - 60px);
+    margin: 25px auto 0;
+    padding: 15px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.76);
+    border-radius: 18px;
+    box-shadow:
+        0 10px 30px rgba(67, 56, 202, 0.08);
+}
+
+
+.menu-links {
+    display: flex;
+    gap: 10px;
+}
+
+
+.menu-links a {
+    padding: 8px 13px;
+    text-decoration: none;
+    color: #555f72;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+
+.menu-links a:hover {
+    color: #7c3aed;
+    background-color: #f0ebff;
+}
+
+
+.menu-links .active {
+    color: white;
+    background: linear-gradient(
+        120deg,
+        #6366f1,
+        #8b5cf6,
+        #ec4899
+    );
+}
+
+
+/* مدیریت کاربران فقط برای admin */
+
+
+
+.user-part {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+}
+
+
+.logout {
+    color: #e11d48;
+    text-decoration: none;
+}
+
+
+/* کادر اصلی */
+
+.main-box {
+    width: calc(100% - 60px);
+    margin: 25px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 24px;
+    box-shadow:
+        0 25px 65px rgba(67, 56, 202, 0.08);
+}
+
+
+/* عنوان صفحه */
+
+.page-head {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.page-head h2 {
+    margin: 0;
+    color: #172033;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+
+.page-head p {
+    margin-top: 6px;
+    margin-bottom: 0;
+    color: #7a8498;
+    font-size: 13px;
+}
+
+
+/* دکمه افزودن مخاطب */
+
+.add-btn {
+    padding: 10px 18px;
+    font-family: "Vazirmatn", sans-serif;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(
+        120deg,
+        #6366f1,
+        #8b5cf6,
+        #ec4899
+    );
+
+    box-shadow:
+        0 8px 20px rgba(124, 58, 237, 0.20);
+}
+
+
+.add-btn:hover {
+    color: white;
+
+    opacity: 0.9;
+}
+
+
+/* جستجو */
+
+.search-box {
+    margin-bottom: 20px;
+}
+
+
+.search-input {
+    height: 48px;
+    padding: 10px 15px;
+    font-family: "Vazirmatn", sans-serif;
+    font-size: 13px;
+    border: 1px solid #dde3ed;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+.search-input:focus {
+    border-color: #818cf8;
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.10);
+}
+
+
+/* جدول دفترچه تلفن */
+
+.contact-table {
+    width: 100%;
+    min-width: 950px;
+    margin-bottom: 0;
+    table-layout: fixed;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+
+/* عنوان ستون ها */
+
+.contact-table th {
+    padding: 15px 10px;
+    text-align: center !important;
+    vertical-align: middle !important;
+    color: #4b5563;
+    background-color: #f5f3ff;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+
+/* اطلاعات داخل جدول */
+
+.contact-table td {
+    padding: 14px 10px;
+    text-align: center !important;
+    vertical-align: middle !important;
+    color: #4b5563;
+    font-size: 13px;
+    white-space: normal;
+}
+
+
+/* Hover ردیف */
+
+.contact-table tbody tr:hover {
+    background-color: #faf8ff;
+}
+
+
+/* نام مخاطب */
+
+.contact-table td:first-child {
+    text-align: center !important;
+    font-weight: 600;
+    color: #334155;
+}
+
+
+/* واحد / اداره */
+
+.contact-table td:nth-child(2) {
+    text-align: center !important;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+
+/* موبایل */
+
+.contact-table td:nth-child(3) {
+    direction: ltr;
+    text-align: center !important;
+}
+
+
+/* تلفن */
+
+.contact-table td:nth-child(4) {
+    direction: ltr;
+    text-align: center !important;
+}
+
+
+/* ایمیل */
+
+.contact-table td:nth-child(5) {
+    direction: ltr;
+    text-align: center !important;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+
+/* ستون عملیات */
+
+.contact-table td:last-child {
+    text-align: center !important;
+    white-space: nowrap;
+}
+
+
+/* دکمه ویرایش */
+
+.edit-btn {
+    padding: 6px 12px;
+    font-family: "Vazirmatn", sans-serif;
+    font-size: 12px;
+    color: #6d28d9;
+    background-color: #ede9fe;
+    border: none;
+    border-radius: 8px;
+}
+
+
+.edit-btn:hover {
+    color: #6d28d9;
+    background-color: #ddd6fe;
+}
+
+
+/* دکمه حذف */
+
+.delete-btn {
+    padding: 6px 12px;
+    margin-right: 5px;
+    font-family: "Vazirmatn", sans-serif;
+    font-size: 12px;
+    color: #e11d48;
+    background-color: #ffe4e6;
+    border: none;
+    border-radius: 8px;
+}
+
+
+.delete-btn:hover {
+    color: #e11d48;
+    background-color: #fecdd3;
+}
+
+
+/* نبود نتیجه */
+
+.no-result {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+    color: #7a8498;
+    font-size: 13px;
+}
+
+
+/* پنجره مخاطب */
+
+.contact-box {
+    border: none;
+    border-radius: 22px;
+    background-color: rgba(255, 255, 255, 0.97);
+    box-shadow:
+        0 20px 50px rgba(67, 56, 202, 0.15);
+}
+
+
+.modal-header {
+    padding: 20px 22px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+.modal-title {
+    color: #172033;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+.modal-body {
+    padding: 22px;
+}
+
+
+.form-label {
+    margin-bottom: 8px;
+    color: #3f485a;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.contact-input {
+    height: 48px;
+    font-family: "Vazirmatn", sans-serif;
+    font-size: 13px;
+    border: 1px solid #dde3ed;
+    border-radius: 12px;
+}
+
+
+.contact-input:focus {
+    border-color: #818cf8;
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.10);
+}
+
+
+/*راست چین شدن */
+
+#email {
+    direction: rtl;
+    text-align: right;
+}
+
+
+/* پایین پنجره */
+
+.modal-footer {
+    padding: 16px 22px;
+    border-top: 1px solid #eeeeee;
+}
+
+
+/* ذخیره */
+
+.save-btn {
+    padding: 9px 22px;
+    font-family: "Vazirmatn", sans-serif;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(
+        120deg,
+        #6366f1,
+        #8b5cf6,
+        #ec4899
+    );
+}
+
+
+.save-btn:hover {
+    color: white;
+    opacity: 0.9;
+}
+
+
+/* انصراف */
+
+.cancel-btn {
+    padding: 9px 20px;
+    font-family: "Vazirmatn", sans-serif;
+    color: #555f72;
+    background-color: #eef0f4;
+    border: none;
+    border-radius: 10px;
+}
+
+
+.cancel-btn:hover {
+    background-color: #e3e5ea;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .top-menu {
+        width: calc(100% - 30px);
+        flex-direction: column;
+        gap: 15px;
+    }
+
+
+    .menu-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    .main-box {
+        width: calc(100% - 30px);
+        padding: 20px;
+    }
+
+
+    .page-head {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+
+    .add-btn {
+        width: 100%;
+    }
+
+}

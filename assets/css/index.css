@@ -1,0 +1,572 @@
+@font-face {
+    font-family: "Vazirmatn";
+    src: url("../fonts/Vazirmatn-Regular.woff2") format("woff2");
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Vazirmatn", Tahoma, sans-serif;
+    color: #1e293b;
+
+    background:
+        radial-gradient(
+            circle at 10% 20%,
+            rgba(96, 165, 250, 0.40),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 90% 15%,
+            rgba(167, 139, 250, 0.32),
+            transparent 38%
+        ),
+
+        radial-gradient(
+            circle at 75% 90%,
+            rgba(244, 114, 182, 0.28),
+            transparent 38%
+        ),
+
+        linear-gradient(
+            135deg,
+            #f5f9ff,
+            #f7f3ff,
+            #fff4fa
+        );
+}
+
+
+/* منوی بالا */
+
+.top-menu {
+    width: calc(100% - 60px);
+    margin: 25px auto 0;
+    padding: 15px 22px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.76);
+    border-radius: 18px;
+    box-shadow:
+        0 10px 30px rgba(67, 56, 202, 0.08);
+}
+
+
+.menu-links {
+    display: flex;
+    gap: 10px;
+}
+
+
+.menu-links a {
+    padding: 8px 13px;
+    text-decoration: none;
+    color: #555f72;
+    font-size: 14px;
+    border-radius: 10px;
+}
+
+
+.menu-links a:hover {
+    color: #7c3aed;
+    background-color: #f0ebff;
+}
+
+
+.menu-links .active {
+    color: white;
+    background: linear-gradient(
+        120deg,
+        #6366f1,
+        #8b5cf6,
+        #ec4899
+    );
+}
+
+
+
+
+.user-part {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 14px;
+}
+
+
+.logout {
+    color: #e11d48;
+    text-decoration: none;
+}
+
+
+/* کادر اصلی */
+
+.main-box {
+    width: calc(100% - 60px);
+    margin: 25px auto;
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.76);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    border-radius: 24px;
+    box-shadow:
+        0 25px 65px rgba(67, 56, 202, 0.08);
+}
+
+
+/* عنوان صفحه */
+
+.page-title {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.page-title h2 {
+    margin: 0;
+    color: #172033;
+    font-size: 23px;
+    font-weight: 800;
+}
+
+
+.page-title p {
+    margin-top: 6px;
+    margin-bottom: 0;
+    color: #7a8498;
+    font-size: 13px;
+}
+
+
+/* دکمه افزودن */
+
+.add-btn {
+    padding: 10px 18px;
+    font-family: "Vazirmatn", sans-serif;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(
+        120deg,
+        #6366f1,
+        #8b5cf6,
+        #ec4899
+    );
+
+    box-shadow:
+        0 8px 20px rgba(124, 58, 237, 0.20);
+}
+
+
+.add-btn:hover {
+    color: white;
+    opacity: 0.9;
+}
+
+
+/* جستجو */
+
+.search-box {
+    margin-bottom: 20px;
+}
+
+
+.search-input {
+    height: 48px;
+    padding: 10px 15px;
+    font-family: "Vazirmatn", sans-serif;
+    font-size: 13px;
+    border: 1px solid #dde3ed;
+    border-radius: 12px;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+.search-input:focus {
+    border-color: #818cf8;
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.10);
+}
+
+
+/* جدول اصلی */
+
+.password-table {
+    width: 100%;
+    min-width: 1100px;
+    margin-bottom: 0;
+    table-layout: fixed;
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+
+/* عرض ستون‌ها */
+
+.password-table .col-site {
+    width: 20%;
+}
+
+
+.password-table .col-url {
+    width: 25%;
+}
+
+
+.password-table .col-password {
+    width: 11%;
+}
+
+
+.password-table .col-date {
+    width: 16%;
+}
+
+
+.password-table .col-user {
+    width: 12%;
+}
+
+
+.password-table .col-actions {
+    width: 16%;
+}
+
+
+/* هدر جدول */
+
+.password-table th {
+    padding: 15px 10px;
+    text-align: center !important;
+    vertical-align: middle !important;
+    color: #4b5563;
+    background-color: #f5f3ff;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+
+/* سلول‌های جدول */
+
+.password-table td {
+    padding: 14px 10px;
+    text-align: center !important;
+    vertical-align: middle !important;
+    color: #4b5563;
+    font-size: 13px;
+}
+
+
+.password-table tbody tr:hover {
+    background-color: #faf8ff;
+}
+
+
+/* نام سایت + حساب */
+
+.site-account {
+    text-align: center !important;
+}
+
+
+.site-name {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: center !important;
+    color: #172033;
+    font-weight: 700;
+}
+
+
+.account-text {
+    display: block;
+    width: 100%;
+    text-align: center !important;
+    direction: ltr;
+    color: #7a8498;
+    font-size: 12px;
+    white-space: normal;
+    overflow-wrap: anywhere;
+}
+
+
+/* URL */
+
+.url-cell {
+    text-align: center !important;
+    direction: ltr;
+    white-space: normal !important;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+
+/* رمز عبور */
+
+.password {
+    display: inline-block;
+    padding: 5px 10px;
+    text-align: center;
+    color: #6d28d9;
+    background-color: #f1efff;
+    border-radius: 8px;
+}
+
+
+/* ستون عملیات */
+
+.action-cell {
+    text-align: center !important;
+    white-space: nowrap;
+}
+
+
+/* دکمه‌ها */
+
+.edit-btn,
+.history-btn,
+.delete-btn {
+    padding: 6px 11px;
+    font-family: "Vazirmatn", sans-serif;
+    font-size: 12px;
+    border: none;
+    border-radius: 8px;
+}
+
+
+.edit-btn {
+    color: #6d28d9;
+    background-color: #ede9fe;
+}
+
+
+.history-btn {
+    margin-right: 5px;
+    color: #2563eb;
+    background-color: #dbeafe;
+}
+
+
+.delete-btn {
+    margin-right: 5px;
+    color: #e11d48;
+    background-color: #ffe4e6;
+}
+
+
+.edit-btn:hover {
+    color: #6d28d9;
+    background-color: #ddd6fe;
+}
+
+
+.history-btn:hover {
+    color: #2563eb;
+    background-color: #bfdbfe;
+}
+
+
+.delete-btn:hover {
+    color: #e11d48;
+    background-color: #fecdd3;
+}
+
+
+/* پیام نبود نتیجه */
+
+.no-result {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+    color: #7a8498;
+    font-size: 13px;
+}
+
+
+/* پنجره‌ها */
+
+.site-box,
+.history-box {
+    border: none;
+    border-radius: 22px;
+    background-color: rgba(255, 255, 255, 0.97);
+    box-shadow:
+        0 20px 50px rgba(67, 56, 202, 0.15);
+}
+
+
+.modal-header {
+    padding: 20px 22px;
+    border-bottom: 1px solid #eeeeee;
+}
+
+
+.modal-title {
+    color: #172033;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+
+.modal-body {
+    padding: 22px;
+}
+
+
+.form-label {
+    margin-bottom: 8px;
+    color: #3f485a;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.site-input {
+    height: 48px;
+    font-family: "Vazirmatn", sans-serif;
+    font-size: 13px;
+    border: 1px solid #dde3ed;
+    border-radius: 12px;
+}
+
+
+.site-input:focus {
+    border-color: #818cf8;
+    box-shadow:
+        0 0 0 4px rgba(99, 102, 241, 0.10);
+}
+
+
+.modal-footer {
+    padding: 16px 22px;
+    border-top: 1px solid #eeeeee;
+}
+
+
+.save-btn {
+    padding: 9px 22px;
+    font-family: "Vazirmatn", sans-serif;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(
+        120deg,
+        #6366f1,
+        #8b5cf6,
+        #ec4899
+    );
+}
+
+
+.save-btn:hover {
+    color: white;
+    opacity: 0.9;
+}
+
+
+.cancel-btn {
+    padding: 9px 20px;
+    font-family: "Vazirmatn", sans-serif;
+    color: #555f72;
+    background-color: #eef0f4;
+    border: none;
+    border-radius: 10px;
+}
+
+
+.cancel-btn:hover {
+    background-color: #e3e5ea;
+}
+
+
+/* جدول تاریخچه */
+
+.history-table {
+    width: 100%;
+    margin-bottom: 0;
+    table-layout: fixed;
+}
+
+
+.history-table th {
+    padding: 13px;
+    text-align: center;
+    color: #4b5563;
+    background-color: #f5f3ff;
+    font-size: 13px;
+}
+
+
+.history-table td {
+    padding: 13px;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 13px;
+}
+
+
+.old-pass {
+    display: inline-block;
+    padding: 4px 8px;
+    color: #e11d48;
+    background-color: #ffe4e6;
+    border-radius: 6px;
+}
+
+
+.new-pass {
+    display: inline-block;
+    padding: 4px 8px;
+    color: #15803d;
+    background-color: #dcfce7;
+    border-radius: 6px;
+}
+
+
+/* Responsive */
+
+@media (max-width: 768px) {
+
+    .top-menu {
+        width: calc(100% - 30px);
+        flex-direction: column;
+        gap: 15px;
+    }
+
+
+    .menu-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+
+    .main-box {
+        width: calc(100% - 30px);
+        padding: 20px;
+    }
+
+
+    .page-title {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+
+    .add-btn {
+        width: 100%;
+    }
+
+}

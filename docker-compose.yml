@@ -1,0 +1,46 @@
+services:
+  db:
+    image: mysql:8.4
+    container_name: password-manager-db
+    restart: unless-stopped
+    environment:
+      TZ: Asia/Tehran
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: password_manager
+      MYSQL_USER: password_manager
+      MYSQL_PASSWORD: password_manager
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./database.sql:/docker-entrypoint-initdb.d/01-database.sql:ro
+    command: ["--default-time-zone=+03:30"]
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-proot_password"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+
+  web:
+    build: .
+    container_name: password-manager-web
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "18080:80"
+
+  phpmyadmin:
+    image: phpmyadmin:5-apache
+    container_name: password-manager-phpmyadmin
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+    ports:
+      - "18081:80"
+
+volumes:
+  mysql_data:
